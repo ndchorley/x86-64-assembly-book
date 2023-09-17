@@ -11,6 +11,8 @@ _start:
     add al, [y]
     mov [result], al
 
-    mov rax, 60 ; code for terminating
+    ; 60 is the system call number for the exit sys call.
+    ; See /usr/include/asm/unistd_64.h
+    mov rax, 60
     mov rdi, [result] ; use result as the exit code
     syscall
